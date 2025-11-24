@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
-require_relative "rails_mvp/version"
+require_relative "staples/version"
+require_relative "staples/cli"
 
-module RailsMvp
+module Staples
   class Error < StandardError; end
   # Your code goes here...
 end

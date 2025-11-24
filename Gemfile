@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in rails_mvp.gemspec
+# Specify your gem's dependencies in staples.gemspec
 gemspec
 
 gem "irb"
