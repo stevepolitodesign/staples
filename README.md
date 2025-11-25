@@ -1,5 +1,7 @@
 # Staples
 
+[![Ruby](https://github.com/stevepolitodesign/staples/actions/workflows/main.yml/badge.svg)](https://github.com/stevepolitodesign/staples/actions/workflows/main.yml)
+
 The basic ingredients for your next Rails project.
 
 ## Installation
