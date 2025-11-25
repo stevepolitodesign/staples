@@ -7,7 +7,7 @@ The basic ingredients for your next Rails project.
 Install the gem by executing:
 
 ```bash
-gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+gem install staples
 ```
 
 ## Usage
