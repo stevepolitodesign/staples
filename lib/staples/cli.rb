@@ -1,21 +1,41 @@
 # frozen_string_literal: true
 
 module Staples
+  # Command-line interface for generating Rails applications with opinionated defaults.
+  #
+  # This class handles the creation of new Rails applications with predefined
+  # configuration options including PostgreSQL database, Bootstrap CSS, and
+  # skipping Solid Queue.
   class CLI
+    # Default options passed to the Rails generator.
+    #
+    # @return [Array<String>] the list of Rails CLI options
     OPTIONS = [
       "-d=postgresql",
       "--css=bootstrap",
       "--skip-solid"
     ]
 
+    # Initializes a new CLI instance.
+    #
+    # @param app_name [String] the name of the Rails application to create
     def initialize(app_name)
       @app_name = app_name
     end
 
+    # Creates and runs a new CLI instance.
+    #
+    # @param app_name [String] the name of the Rails application to create
+    # @return [Boolean] true if the Rails app was created successfully
+    # @raise [Error] if Rails is not installed or app creation fails
     def self.run(app_name)
       new(app_name).run
     end
 
+    # Executes the Rails application generation process.
+    #
+    # @return [Boolean] true if the Rails app was created successfully
+    # @raise [Error] if Rails is not installed or app creation fails
     def run
       verify_rails_exists!
       generate_new_rails_app
