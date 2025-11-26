@@ -73,7 +73,9 @@ jobs:
           RAILS_ENV: test
           DATABASE_URL: postgres://postgres:postgres@localhost:5432
         working-directory: /tmp/test_app
-        run: bin/rails test:all
+        run: |
+          bin/rails db:test:prepare
+          bin/rails test:all
       - name: Verify app can start
         env:
           DATABASE_URL: postgres://postgres:postgres@localhost:5432

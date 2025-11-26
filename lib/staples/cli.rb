@@ -10,7 +10,7 @@ module Staples
     # Default options passed to the Rails generator.
     #
     # @return [Array<String>] the list of Rails CLI options
-    OPTIONS = [
+    BASE_OPTIONS = [
       "-d=postgresql",
       "--css=bootstrap",
       "--skip-solid"
@@ -52,7 +52,10 @@ module Staples
     end
 
     def generate_new_rails_app
-      if system("rails", "new", app_name, *OPTIONS)
+      template_path = File.expand_path("../templates/base.rb", __dir__)
+      options = BASE_OPTIONS + ["-m=#{template_path}"]
+
+      if system("rails", "new", app_name, *options)
         true
       else
         raise Error, "Failed to create Rails app"

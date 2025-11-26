@@ -16,13 +16,15 @@ RSpec.describe Staples do
 
     describe ".run" do
       it "calls rails new with expected arguments" do
+        template_path = File.expand_path("../lib/templates/base.rb", __dir__)
         args = [
           "rails",
           "new",
           "app_name",
           "-d=postgresql",
           "--css=bootstrap",
-          "--skip-solid"
+          "--skip-solid",
+          "-m=#{template_path}"
         ]
 
         expect_any_instance_of(Staples::CLI).to receive(:system).with(*args)
@@ -56,6 +58,7 @@ RSpec.describe Staples do
 
       context "when rails fails to install" do
         let(:app_name) { "app_name" }
+        let(:template_path) { File.expand_path("../lib/templates/base.rb", __dir__) }
         let(:args) {
           [
             "rails",
@@ -63,7 +66,8 @@ RSpec.describe Staples do
             app_name,
             "-d=postgresql",
             "--css=bootstrap",
-            "--skip-solid"
+            "--skip-solid",
+            "-m=#{template_path}"
           ]
         }
         let(:stub_failure) {
