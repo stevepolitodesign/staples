@@ -1,6 +1,9 @@
 ## [Unreleased]
 
+## [1.0.0] - 2025-11-26
+
 ### Added
+
 - YARD documentation comments for all public APIs
 - Application template that sets up a new Rails application with sensible defaults
 
